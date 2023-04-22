@@ -59,4 +59,4 @@ def handle_message(data):
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5001)
+    socketio.run(app, debug=True)
