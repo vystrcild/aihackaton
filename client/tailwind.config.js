@@ -9,10 +9,10 @@ module.exports = {
         bgblack: "#1F1F1F",
         bglight: "#969593",
         primary: "#E3FFA8",
-        olive: "#45ffbc",
+        olive: "#F2D43D",
       },
       fontFamily: {
-        vietnam: ["Be Vietnam Pro", "sans-serif"]},
+        vietnam: ["IBM Plex Mono", "sans-serif"]},
     },
   },
   plugins: [],

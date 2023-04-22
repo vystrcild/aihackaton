@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Sidebar from "./components/Sidebar/Sidebar"
 import Main from "./components/Main/Main"
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
     return (
       <>
       <div className="font-vietnam flex h-screen">
-      <Sidebar selectedRoom={selectedRoom} onRoomSelect={handleRoomSelect} />
       <Main selectedRoom={selectedRoom} />
     </div>
     </>
