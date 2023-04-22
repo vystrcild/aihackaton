@@ -34,7 +34,7 @@ const Main = ({ selectedRoom }) => {
   };
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://4320-20-199-67-79.ngrok-free.app');
     setSocket(newSocket);
 
     const handleNewMessage = (data) => {
