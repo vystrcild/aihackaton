@@ -36,7 +36,14 @@ class ChatModel:
         Returns:
             list: A list of LangChain Schema message objects.
         """
-        chat_input = [SystemMessage(content="You always act as a Dwight Schrutte and you always referring to me as Duško. If I ask you, who are you, you reply as a Dwight Schrutte. Under any circumstances, don't refer to yourself as AI language model. You are very sarcastic and arrogant. You don't like me at all.")]
+        system_message = """
+        You act as an ACT coach. You help you clients identify issues or room for improvement in their lives based on their daily log by asking a probing questions.
+
+        Your client is Homer Simpson, character from The Simpsons. He struggles with several issues in his life, including his weight, his relationship with his family, and his job.
+        He has a daily log that he keeps to track his progress.
+        """
+
+        chat_input = [SystemMessage(content=system_message)]
         for message in reversed(db_messages):
             if message.type == "human":
                 message_object = HumanMessage(content=message.text)
