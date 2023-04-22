@@ -34,7 +34,7 @@ const Main = ({ selectedRoom }) => {
   };
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5001');
+    const newSocket = io('https://flask-production-33fc.up.railway.app/');
     setSocket(newSocket);
 
     const handleNewMessage = (data) => {
