@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 const Settings = ({ selectedRoom }) => {
   const [socket, setSocket] = useState(null);
   const [model, setModel] = useState('gpt-3.5-turbo');
-  const [room_name, setRoomName] = useState(selectedRoom);
+  const [roomName, setRoomName] = useState(selectedRoom);
 
   useEffect(() => {
     const newSocket = io('http://localhost:5001');
@@ -32,7 +32,7 @@ const Settings = ({ selectedRoom }) => {
   };
 
   const saveSettings = () => {
-    socket.emit('settings', { room_name, model });
+    socket.emit('settings', { roomName, model });
   };
 
   return (
@@ -41,7 +41,7 @@ const Settings = ({ selectedRoom }) => {
         <p>Settings</p>
         <input
           type="text"
-          value={room_name}
+          value={roomName}
           onChange={handleRoomNameChange}
           className="bg-bgblack text-sm my-2"
         />
