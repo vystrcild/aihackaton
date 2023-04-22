@@ -34,7 +34,7 @@ const Message = ({ user, text, datetime }) => {
 
   return (
     <div className="flex text-white py-8 px-4 w-full justify-center">
-      <div className='w-6/12 flex justify-center'>
+      <div className='w-screen md:w-6/12 flex justify-center'>
       <img src={avatarUrl} alt={`${user} avatar`} className="w-12 h-12 rounded-full mr-4 mt-1" />
 
       <div className='flex flex-col space-y-2 w-full'>

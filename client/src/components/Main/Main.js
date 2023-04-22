@@ -65,7 +65,6 @@ const Main = ({ selectedRoom }) => {
     <div className="w-full h-full flex flex-col">
       <MessageList messages={filteredMessages} isLoading={isLoading} />
       <ChatInput onSendMessage={handleSendMessage} />
-
     </div>
   );
 };
