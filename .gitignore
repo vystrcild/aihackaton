@@ -161,6 +161,8 @@ cython_debug/
 
 .vscode
 
+**/data/messages.db
+**/data/events.db
+**/data/logs.db
 
 **/db/
-
