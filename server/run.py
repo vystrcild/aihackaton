@@ -57,6 +57,5 @@ def handle_message(data):
         emit("data", reply_object)
 
 
-
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5001)
+    socketio.run(app, debug=True)
