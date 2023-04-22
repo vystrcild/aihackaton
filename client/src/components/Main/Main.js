@@ -34,7 +34,7 @@ const Main = ({ selectedRoom }) => {
   };
 
   useEffect(() => {
-    const newSocket = io('https://flask-production-33fc.up.railway.app/');
+    const newSocket = io('https://4320-20-199-67-79.ngrok-free.app');
     setSocket(newSocket);
 
     const handleNewMessage = (data) => {
