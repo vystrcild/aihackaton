@@ -9,7 +9,7 @@ class Profile(db.Model):
         self.summary = summary
 
     @classmethod
-    def update_dimension(cls, dimension, new_summary):
+    def add_dimension(cls, dimension, new_summary):
         new_values = {
             'dimension': dimension,
             'summary': new_summary
@@ -18,3 +18,22 @@ class Profile(db.Model):
         db.session.add(new_dimension)
         db.session.commit()
         return new_dimension
+
+    @classmethod
+    def update_dimension(cls, dimension, new_summary):
+        new_values = {
+            'dimension': dimension,
+            'summary': new_summary
+        }
+
+        query = cls.query
+        result = query.filter_by(dimension=dimension)
+        result.summary = new_summary
+        db.session.commit()
+
+    @classmethod
+    def get_dimension(cls, dimension):
+        query = cls.query
+
+        dimension = query.filter_by(dimension=dimension).first()
+        return dimension.summary
