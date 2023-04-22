@@ -62,7 +62,7 @@ const Main = ({ selectedRoom }) => {
 
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-screen flex flex-col pt-20">
       <MessageList messages={filteredMessages} isLoading={isLoading} />
       <ChatInput onSendMessage={handleSendMessage} />
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Main from "./components/Main/Main"
+import Navbar from "./components/Main/Navbar"
 
 function App() {
   const [selectedRoom, setSelectedRoom] = useState('chat_test');
@@ -9,11 +10,12 @@ function App() {
   };
 
     return (
-      <>
-      <div className="font-vietnam flex h-screen">
-      <Main selectedRoom={selectedRoom} />
-    </div>
-    </>
+      <div class="">
+        <div className="font-vietnam flex-wrap flex-col">
+        <Navbar />
+        <Main selectedRoom={selectedRoom}/>
+        </div>
+        </div>
   )
 }
 

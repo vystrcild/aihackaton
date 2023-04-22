@@ -33,7 +33,7 @@ const Message = ({ user, text, datetime }) => {
   const formattedDatetime = formatDate(datetime);
 
   return (
-    <div className="flex text-white py-8 px-4 w-full justify-center">
+    <div className="flex text-white py-4 px-4 w-full justify-center">
       <div className='w-screen md:w-6/12 flex justify-center'>
       <img src={avatarUrl} alt={`${user} avatar`} className="w-12 h-12 rounded-full mr-4 mt-1" />
 

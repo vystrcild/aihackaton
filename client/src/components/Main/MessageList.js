@@ -26,7 +26,7 @@ const MessageList = ({ messages, isLoading }) => {
       ))}
       {isLoading && (
         <div className="flex items-center justify-center p-4">
-          <LineWave color="#45ffbc" height="50" width="50" />
+          <LineWave color="#F2D43D" height="50" width="50" />
         </div>
       )}
     </div>
