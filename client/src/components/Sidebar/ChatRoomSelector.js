@@ -1,7 +1,7 @@
 import React from 'react';
 
 const rooms = [
-  { id: 'chat_test', name: 'OpenAI chat' }
+  { id: 'chat_test', name: 'CoachAI' }
 ];
 
 const ChatRoomSelector = ({ selectedRoom, onSelectRoom }) => {
