@@ -1,0 +1,1 @@
+Ta složka tu musí být, jinak fail a neví jak to udělat jinak než sem dát nějaká file...třeba tento readme.md :D
