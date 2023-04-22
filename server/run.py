@@ -35,14 +35,6 @@ def handle_message(data):
     # Save Message in DB
     Message.save_message_to_db(data)
 
-    # Farnam Street Reply
-    if data["room"] == "farnam":
-        reply = generate_farnam_reply(data["text"])
-
-        # Save Farnam Reply in DB
-        Message.save_message_to_db(reply)
-
-        emit("data", reply)
 
     # Chat Test Reply
     if data["room"] == "chat_test":
