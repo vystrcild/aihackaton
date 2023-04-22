@@ -7,6 +7,7 @@ from langchain.schema import (
 from datetime import datetime
 import os
 from dotenv import load_dotenv
+from app.models.profile import Profile
 
 load_dotenv()
 
@@ -36,11 +37,16 @@ class ChatModel:
         Returns:
             list: A list of LangChain Schema message objects.
         """
-        system_message = """
-        You act as an ACT coach. You help you clients identify issues or room for improvement in their lives based on their daily log by asking a probing questions.
+        context = ""
+        for dimension in ["happiness", "career", "finance", "relationships", "health"]:
+            response = Profile.get_dimension(dimension)
+            context += f'"{dimension}": "{response}"\n'
 
-        Your client is Homer Simpson, character from The Simpsons. He struggles with several issues in his life, including his weight, his relationship with his family, and his job.
-        He has a daily log that he keeps to track his progress.
+        system_message = f"""
+        You act as an ACT coach. You help your clients identify issues or room for improvement in their lives based on their daily log by asking a probing questions. Be concise and don't explain to much. Ask probing questions.
+
+        Context:
+        {context}
         """
 
         chat_input = [SystemMessage(content=system_message)]
