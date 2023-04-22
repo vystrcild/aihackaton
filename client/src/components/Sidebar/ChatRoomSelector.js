@@ -23,7 +23,7 @@ const ChatRoomSelector = ({ selectedRoom, onSelectRoom }) => {
               className={`${
                 room.id === selectedRoom ? 'text-primary' : 'text-white'
               } hover:text-olive`}
-              href="#"
+              href="/"
               onClick={handleRoomSelect}
               data-room-id={room.id}
             >
