@@ -2,7 +2,7 @@ import React from 'react';
 
 const rooms = [
   { id: 'farnam', name: 'Farnam Street' },
-  { id: 'room1', name: 'Chat Room 1' },
+  { id: 'chat_test', name: 'OpenAI chat' },
   { id: 'room2', name: 'Chat Room 2' },
   { id: 'room3', name: 'Chat Room 3' },
 ];
@@ -19,7 +19,7 @@ const ChatRoomSelector = ({ selectedRoom, onSelectRoom }) => {
       <ul className="mt-4">
         {rooms.map((room) => (
           <li key={room.id}>
-            <div className='p-2 m-2 rounded-md border border-bglight text-sm'>
+            <div className='p-2 m-2 rounded-md border border-bglight text-xs'>
             <a
               className={`${
                 room.id === selectedRoom ? 'text-primary' : 'text-white'
