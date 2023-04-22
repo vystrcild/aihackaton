@@ -42,7 +42,6 @@ class EventModel:
 
         for dimension, summary in homer_json.items():
             response = Profile.get_dimension(dimension)
-            print(dimension, response)
             if (response == "" or response is None):
                 Profile.add_dimension(dimension=dimension, new_summary=summary)
 
@@ -86,8 +85,8 @@ class EventModel:
                 json_prep = {}
 
             print(json_prep)
-            json_response = json.loads(json_prep)
+            json_subresponse = json.loads(json_prep)
 
-            Profile.update_dimension(dimension=dimension, new_summary=json_response)
+            Profile.update_dimension(dimension=dimension, new_summary=json_subresponse)
 
         return response
