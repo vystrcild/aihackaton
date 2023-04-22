@@ -7,6 +7,7 @@ from app.config import Config
 from app.models.messages import Message
 from app.utilities.message_utils import create_message_payload
 from app.utilities.chat.chat_model import ChatModel
+from app.utilities.event.event_parser import EventModel
 
 app = create_app(Config)
 CORS(app,resources={r"/*":{"origins":"*"}})
@@ -35,12 +36,14 @@ def handle_message(data):
     # Save Message in DB
     Message.save_message_to_db(data)
 
-
     # Chat Test Reply
     if data["room"] == "chat_test":
         # Download last 5 messages from DB
         with app.app_context():
             db_messages = Message.get_last_n_messages(5, room=data["room"])
+
+        event = EventModel()
+        event_input = event.process_event(data)
 
         # Generate Chat Test Reply
         chat = ChatModel()
