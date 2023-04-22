@@ -1,7 +1,6 @@
 import React from 'react';
 
 const rooms = [
-  { id: 'farnam', name: 'Farnam Street' },
   { id: 'chat_test', name: 'OpenAI chat' },
   { id: 'room2', name: 'Chat Room 2' },
   { id: 'room3', name: 'Chat Room 3' },

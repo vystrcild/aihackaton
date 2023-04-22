@@ -36,10 +36,3 @@ class Message(db.Model):
 
         messages = query.order_by(desc(cls.datetime)).limit(n).all()
         return messages
-
-    @classmethod
-    def clear_messages_in_room(cls, room):
-        messages_to_clear = cls.query.filter_by(room=room).all()
-        for message in messages_to_clear:
-            message.is_cleared = True
-        db.session.commit()

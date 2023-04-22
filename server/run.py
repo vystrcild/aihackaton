@@ -5,9 +5,7 @@ from flask_cors import CORS
 from app import create_app
 from app.config import Config
 from app.models.messages import Message
-from app.models.rooms import Room
 from app.utilities.message_utils import create_message_payload
-from app.utilities.farnam.farnam import generate_farnam_reply
 from app.utilities.chat.chat_model import ChatModel
 
 app = create_app(Config)
@@ -66,17 +64,6 @@ def handle_message(data):
         # Send Chat Test Reply to client
         emit("data", reply_object)
 
-
-@socketio.on("clear_room")
-def handle_clear_chat(room):
-    """event listener when client clicks the 'clear' button"""
-    Message.clear_messages_in_room(room)
-    print(f"Chat input cleared for room {room}")
-
-@socketio.on("settings")
-def handle_settings(data):
-    """event listener when client clicks the 'settings' button"""
-    print(f"Settings: {data}")
 
 
 if __name__ == '__main__':
