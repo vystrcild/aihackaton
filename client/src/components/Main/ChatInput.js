@@ -38,7 +38,7 @@ const ChatInput = ({ onSendMessage }) => {
       <form onSubmit={handleSubmit} className="w-full flex justify-center">
         <textarea
           ref={textareaRef}
-          className="border-[1px] border-yellow-400 bg-bgblack rounded-md drop-shadow-[0_35px_35px_rgba(242,212,61,0.25)] w-6/12 py-2 px-2 focus:outline-none resize-none"
+          className="border-[1px] border-yellow-400 bg-bgblack rounded-md drop-shadow-[0_35px_35px_rgba(242,212,61,0.25)] w-6/12 py-2 px-2 mb-4 focus:outline-none resize-none"
           id="text-input"
           value={message}
           placeholder="Your prompt"
