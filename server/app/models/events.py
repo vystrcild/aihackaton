@@ -19,7 +19,7 @@ class Event(db.Model):
 
     @classmethod
     def save_event_to_db(cls, event):
-        datetime_field = datetime.strptime(event["datetime"], "%Y-%m-%d %H:%M:%S.%f")
-        new_event = cls(dimension=event["dimension"], text=event["text"], sentiment=event["sentiment"], datetime=datetime_field, weight=event["weight"])
+        now = datetime.now()
+        new_event = cls(dimension=event["dimension"], text=event["event"], sentiment=event["sentiment"], datetime=now, weight=3)
         db.session.add(new_event)
         db.session.commit()
