@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Main from "./components/Main/Main"
 
 function App() {
-  const [selectedRoom, setSelectedRoom] = useState('farnam');
+  const [selectedRoom, setSelectedRoom] = useState('chat_test');
 
   const handleRoomSelect = (roomId) => {
     setSelectedRoom(roomId);
